@@ -19,19 +19,19 @@
 
 package org.elasticsearch.plugin.analysis.morfologik;
 
-import org.elasticsearch.common.collect.ImmutableList;
 import org.elasticsearch.common.inject.Module;
 import org.elasticsearch.index.analysis.AnalysisModule;
 import org.elasticsearch.index.analysis.pl.MorfologikAnalysisBinderProcessor;
 import org.elasticsearch.indices.analysis.pl.MorfologikIndicesAnalysisModule;
-import org.elasticsearch.plugins.AbstractPlugin;
+import org.elasticsearch.plugins.Plugin;
 
 import java.util.Collection;
+import java.util.Collections;
 
 /**
  *
  */
-public class AnalysisMorfologikPlugin extends AbstractPlugin {
+public class AnalysisMorfologikPlugin extends Plugin {
 
     @Override
     public String name() {
@@ -44,8 +44,8 @@ public class AnalysisMorfologikPlugin extends AbstractPlugin {
     }
 
     @Override
-    public Collection<Class<? extends Module>> modules() {
-        return ImmutableList.<Class<? extends Module>>of(MorfologikIndicesAnalysisModule.class);
+    public Collection<Module> nodeModules() {
+        return Collections.<Module>singletonList(new MorfologikIndicesAnalysisModule());
     }
 
     public void onModule(AnalysisModule module) {
