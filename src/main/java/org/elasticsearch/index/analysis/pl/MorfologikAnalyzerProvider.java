@@ -19,20 +19,13 @@
 
 package org.elasticsearch.index.analysis.pl;
 
-import morfologik.stemming.*;
-import org.apache.lucene.analysis.TokenStream;
-import org.apache.lucene.analysis.morfologik.*;
-
+import org.apache.lucene.analysis.morfologik.MorfologikAnalyzer;
 import org.elasticsearch.common.inject.Inject;
 import org.elasticsearch.common.inject.assistedinject.Assisted;
 import org.elasticsearch.common.settings.Settings;
 import org.elasticsearch.env.Environment;
 import org.elasticsearch.index.Index;
 import org.elasticsearch.index.analysis.AbstractIndexAnalyzerProvider;
-import org.elasticsearch.index.analysis.Analysis;
-import org.elasticsearch.index.settings.IndexSettings;
-
-import java.util.Set;
 
 /**
  */
@@ -41,7 +34,7 @@ public class MorfologikAnalyzerProvider extends AbstractIndexAnalyzerProvider<Mo
     private final MorfologikAnalyzer analyzer;
 
     @Inject
-    public MorfologikAnalyzerProvider(Index index, @IndexSettings Settings indexSettings, Environment env, @Assisted String name, @Assisted Settings settings) {
+    public MorfologikAnalyzerProvider(Index index, Settings indexSettings, Environment env, @Assisted String name, @Assisted Settings settings) {
         super(index, indexSettings, name, settings);
         analyzer = new MorfologikAnalyzer();
     }

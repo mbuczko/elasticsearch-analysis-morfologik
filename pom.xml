@@ -24,10 +24,10 @@
     <parent>
         <groupId>org.elasticsearch.plugin</groupId>
         <artifactId>plugins</artifactId>
-        <version>2.0.0</version>
+        <version>2.2.0</version>
     </parent>
     <properties>
-        <elasticsearch.version>2.0.0</elasticsearch.version>
+        <elasticsearch.version>2.2.0</elasticsearch.version>
         <elasticsearch.plugin.classname>org.elasticsearch.plugin.analysis.morfologik.AnalysisMorfologikPlugin</elasticsearch.plugin.classname>
     </properties>
     <repositories>
@@ -40,12 +40,12 @@
         <dependency>
             <groupId>org.apache.lucene</groupId>
             <artifactId>lucene-analyzers-morfologik</artifactId>
-            <version>${lucene.version}</version>
+            <version>5.5.0</version>
         </dependency>
         <dependency>
             <groupId>org.carrot2</groupId>
             <artifactId>morfologik-polish</artifactId>
-            <version>2.0.1</version>
+            <version>2.1.0</version>
         </dependency>
     </dependencies>
     <build>
@@ -69,8 +69,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.7</source>
-                    <target>1.7</target>
+                    <source>1.8</source>
+                    <target>1.8</target>
                 </configuration>
             </plugin>
             <plugin>
